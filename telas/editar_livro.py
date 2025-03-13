@@ -10,7 +10,7 @@ def tela_editar_livro(container):
     email_usuario = auth.current_user['email']
 
     frame = ttk.Frame(container)
-    frame.place(relx=0.5, rely=0.5, anchor="center")  # Centraliza na tela
+    frame.pack(expand=True, fill="both") 
 
     ttk.Label(frame, text="Editar Livro", font=(
         "Arial", 18, "bold")).pack(pady=10)

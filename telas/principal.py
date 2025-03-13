@@ -10,7 +10,7 @@ from telas.gerenciador_telas import get_tela_login
 def tela_principal(container):
     # Criar um frame centralizado para organizar os widgets
     frame = ttk.Frame(container)
-    frame.place(relx=0.5, rely=0.5, anchor="center")  # Centraliza na tela
+    frame.pack(expand=True, fill="both") 
 
     email_usuario = auth.current_user['email']
     ttk.Label(frame, text=f"Bem-vindo, {email_usuario}!",

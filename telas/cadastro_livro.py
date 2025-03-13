@@ -10,7 +10,7 @@ from telas.principal import get_tela_principal
 
 def tela_cadastro_livro(container, root):
     frame = ttk.Frame(container)
-    frame.place(relx=0.5, rely=0.5, anchor="center")
+    frame.pack(expand=True, fill="both") 
 
     ttk.Label(frame, text="Cadastro de Livros", font=("Arial", 18, "bold")).pack(pady=10)
 

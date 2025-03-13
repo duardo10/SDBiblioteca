@@ -16,7 +16,7 @@ class Aplicacao(ttk.Window):
             widget.destroy()
 
         container = ttk.Frame(self)
-        container.place(relx=0.5, rely=0.5, anchor="center")
+        container.pack(expand=True, fill="both")
         tela_func()(container, self)  # Executando a função aqui, garantindo que funcione
 
 if __name__ == "__main__":
