@@ -8,16 +8,17 @@ from telas.gerenciador_telas import get_tela_principal, get_tela_cadastro
 def tela_login(container, root):
     frame = ttk.Frame(container)
     frame.pack(expand=True, fill="both")  # Garantindo que o frame ocupe espaço
-
+    frame.place(relx=0.5, rely=0.5, anchor="center")
+    
     ttk.Label(frame, text="Login", font=("Arial", 18, "bold")).pack(pady=10)
 
     ttk.Label(frame, text="Email:").pack()
-    email_entry = ttk.Entry(frame, bootstyle="primary")
-    email_entry.pack(pady=5, padx=20, fill="x")
+    email_entry = ttk.Entry(frame, bootstyle="primary", width=30)
+    email_entry.pack(pady=5, padx=20)
 
     ttk.Label(frame, text="Senha:").pack()
-    senha_entry = ttk.Entry(frame, bootstyle="primary", show="*")
-    senha_entry.pack(pady=5, padx=20, fill="x")
+    senha_entry = ttk.Entry(frame, bootstyle="primary", show="*", width=30)
+    senha_entry.pack(pady=5, padx=20)
 
     def validar_login():
         email = email_entry.get()
@@ -27,8 +28,8 @@ def tela_login(container, root):
             messagebox.showinfo("Sucesso", f"Bem-vindo, {email}!")
             root.mostrar_tela(get_tela_principal)
 
-    ttk.Button(frame, text="Entrar", command=validar_login, bootstyle=SUCCESS).pack(pady=10)
-    ttk.Button(frame, text="Cadastrar-se", 
-               command=lambda: root.mostrar_tela(get_tela_cadastro), 
+    ttk.Button(frame, text="Entrar", command=validar_login,
+               bootstyle=SUCCESS).pack(pady=10)
+    ttk.Button(frame, text="Cadastrar-se",
+               command=lambda: root.mostrar_tela(get_tela_cadastro),
                bootstyle=LINK).pack()
-
