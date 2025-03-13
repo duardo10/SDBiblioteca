@@ -88,7 +88,7 @@ A tela de login permite que os usuários entrem no sistema utilizando um **e-mai
 - Botão **Cadastrar-se** para novos usuários.
 
 ### 🖼️ Imagem:
-![Tela de Login](https://github.com/seu-usuario/biblioteca/blob/main/assets/login.png)
+![Tela de Login](https://github.com/user-attachments/assets/431c118a-2f1d-4152-98ee-544335d63d6d)
 
 ---
 
@@ -102,7 +102,35 @@ A tela de cadastro permite a criação de uma nova conta no sistema.
 - Botão **Cadastrar** para concluir o registro.
 
 ### 🖼️ Imagem:
-![Tela de Cadastro](https://github.com/seu-usuario/biblioteca/blob/main/assets/cadastro.png)
+![Tela de Cadastro](https://github.com/user-attachments/assets/0374f69f-38a6-4f28-acd5-32dc0c979154)
+
+---
+# 📚 Menu do Sistema  
+
+## 🔹 Opções Disponíveis  
+- 📖 **Cadastrar Livro** – Permite adicionar um novo livro ao sistema.  
+- 🔍 **Pesquisar** – Busca livros cadastrados no banco de dados.  
+- ✏️ **Editar** – Permite modificar informações de um livro existente.  
+- 🚪 **Sair** – Fecha o sistema.  
+
+## 🖼️ Imagem  
+![Menu do Sistema](https://github.com/user-attachments/assets/da7e9701-8483-4774-b647-3d22517fcc54)
+
+---
+# 📝 Tela de Cadastro de Livro  
+
+## 📌 Descrição  
+A tela de cadastro permite a inclusão de um novo livro no sistema, armazenando suas informações básicas.  
+
+## 🔹 Funcionalidades  
+- Campo para **Título** do livro.  
+- Campo para **Autor** do livro.  
+- Campo para **Quantidade de Páginas**.  
+- Campo para **Ano de Publicação**.  
+- Botão **Cadastrar** para salvar as informações.  
+
+## 🖼️ Imagem  
+![Tela de Cadastro de Livro](https://github.com/user-attachments/assets/e5c26a53-40c8-49e2-b76a-fe13e3059179)
 
 ---
 
@@ -117,7 +145,7 @@ A tela de edição permite que o usuário **modifique** as informações de um l
 - Botão **Excluir livro** para remover do banco de dados.
 
 ### 🖼️ Imagem:
-![Tela de Edição](https://github.com/seu-usuario/biblioteca/blob/main/assets/edicao.png)
+![Tela de Edição](https://github.com/user-attachments/assets/e8b7771f-9e7b-4419-ad59-a411cf6dc278)
 
 ---
 
@@ -131,7 +159,7 @@ A tela de pesquisa permite que o usuário **busque** por livros cadastrados na b
 - Lista de livros correspondentes à busca.
 
 ### 🖼️ Imagem:
-![Tela de Pesquisa](https://github.com/seu-usuario/biblioteca/blob/main/assets/pesquisa.png)
+![Tela de Pesquisa](https://github.com/user-attachments/assets/b2ea6220-1762-4705-920e-ee01067946cb)
 
 ---
 
