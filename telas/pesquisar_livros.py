@@ -19,9 +19,13 @@ def tela_pesquisar_livros(container, root):
     scrollbar.pack(side="right", fill="y")
 
     livros = obter_livros()
-    for livro in livros.each():
-        titulo = livro.val()["titulo"]
-        autor = livro.val()["autor"]
-        livros_listbox.insert(END, f"{titulo} - {autor}")
+    if livros.each():
+        for livro in livros.each():
+            titulo = livro.val()["titulo"]
+            autor = livro.val()["autor"]
+            livros_listbox.insert(END, f"{titulo} - {autor}")
+    else:
+        messagebox.showinfo("Aviso", "Nenhum livro encontrado.")
 
-    ttk.Button(frame, text="Voltar", command=lambda: root.mostrar_tela(tela_principal), bootstyle=LINK).pack(pady=10)
+    ttk.Button(frame, text="Voltar", command=lambda: root.mostrar_tela(get_tela_principal), bootstyle=LINK).pack(pady=10)
+

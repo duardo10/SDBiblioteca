@@ -1,13 +1,10 @@
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from firebase_service import auth
-from telas.gerenciador_telas import get_tela_cadastro_livro
-from telas.gerenciador_telas import get_tela_editar_livro
-from telas.gerenciador_telas import get_tela_pesquisar_livros
-from telas.gerenciador_telas import get_tela_login
+from telas.gerenciador_telas import get_tela_cadastro_livro, get_tela_editar_livro, get_tela_pesquisar_livros, get_tela_login
 
 
-def tela_principal(container):
+def tela_principal(container, root):
     # Criar um frame centralizado para organizar os widgets
     frame = ttk.Frame(container)
     frame.pack(expand=True, fill="both") 
@@ -18,14 +15,14 @@ def tela_principal(container):
 
     button_width = 20  # Defina a largura fixa para os botões
 
-    ttk.Button(frame, text="Cadastrar Livro", command=lambda: mostrar_tela(tela_cadastro_livro, container),
+    ttk.Button(frame, text="Cadastrar Livro", command=lambda: root.mostrar_tela(get_tela_cadastro_livro),
                bootstyle=SUCCESS, width=button_width).pack(pady=10, padx=20, fill=X)
 
-    ttk.Button(frame, text="Editar Livro", command=lambda: mostrar_tela(tela_editar_livro, container),
+    ttk.Button(frame, text="Editar Livro", command=lambda: root.mostrar_tela(get_tela_editar_livro),
                bootstyle=INFO, width=button_width).pack(pady=10, padx=20, fill=X)
 
-    ttk.Button(frame, text="Pesquisar Livros", command=lambda: mostrar_tela(tela_pesquisar_livros, container),
+    ttk.Button(frame, text="Pesquisar Livros", command=lambda: root.mostrar_tela(get_tela_pesquisar_livros),
                bootstyle=PRIMARY, width=button_width).pack(pady=10, padx=20, fill=X)
 
-    ttk.Button(frame, text="Sair", command=lambda: mostrar_tela(tela_login, container),
+    ttk.Button(frame, text="Sair", command=lambda: root.mostrar_tela(get_tela_login),
                bootstyle=DANGER, width=button_width).pack(pady=10, padx=20, fill=X)

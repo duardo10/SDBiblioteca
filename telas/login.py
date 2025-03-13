@@ -2,7 +2,7 @@ import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from tkinter import messagebox
 from firebase_service import login_usuario
-from telas.gerenciador_telas import get_tela_principal
+from telas.gerenciador_telas import get_tela_principal, get_tela_cadastro
 
 
 def tela_login(container, root):
@@ -28,4 +28,7 @@ def tela_login(container, root):
             root.mostrar_tela(get_tela_principal)
 
     ttk.Button(frame, text="Entrar", command=validar_login, bootstyle=SUCCESS).pack(pady=10)
+    ttk.Button(frame, text="Cadastrar-se", 
+               command=lambda: root.mostrar_tela(get_tela_cadastro), 
+               bootstyle=LINK).pack()
 

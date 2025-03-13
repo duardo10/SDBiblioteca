@@ -27,3 +27,5 @@ def tela_cadastro(container, root):
             root.mostrar_tela(tela_login)
 
     ttk.Button(frame, text="Cadastrar", command=registrar, bootstyle=SUCCESS).pack(pady=10)
+    ttk.Button(frame, text="Voltar", command=lambda: root.mostrar_tela(get_tela_login), bootstyle=LINK).pack()
+    

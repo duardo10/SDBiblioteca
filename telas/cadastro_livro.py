@@ -1,11 +1,8 @@
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from tkinter import messagebox
-from firebase_service import adicionar_livro
-from firebase_service import auth
-from telas.principal import get_tela_principal
-
-
+from firebase_service import adicionar_livro, auth
+from telas.gerenciador_telas import get_tela_principal
 
 
 def tela_cadastro_livro(container, root):
@@ -21,6 +18,14 @@ def tela_cadastro_livro(container, root):
     ttk.Label(frame, text="Autor:").pack()
     autor_entry = ttk.Entry(frame, bootstyle="primary")
     autor_entry.pack(pady=5, padx=20, fill=X)
+
+    ttk.Label(frame, text="Quantidade de Páginas:").pack()
+    paginas_entry = ttk.Entry(frame, bootstyle="primary")
+    paginas_entry.pack(pady=5, padx=20, fill=X)
+
+    ttk.Label(frame, text="Ano de Publicação:").pack()
+    ano_entry = ttk.Entry(frame, bootstyle="primary")
+    ano_entry.pack(pady=5, padx=20, fill=X)
 
     def salvar_livro():
         titulo = titulo_entry.get()
@@ -38,6 +43,8 @@ def tela_cadastro_livro(container, root):
         }
 
         adicionar_livro(livro)
+        messagebox.showinfo("Sucesso", "Livro cadastrado com sucesso!")
+        root.mostrar_tela(get_tela_principal)
 
     ttk.Button(frame, text="Salvar Livro", command=salvar_livro, bootstyle=SUCCESS).pack(pady=10)
-    ttk.Button(frame, text="Voltar", command=lambda: root.mostrar_tela(tela_principal), bootstyle=LINK).pack()
+    ttk.Button(frame, text="Voltar", command=lambda: root.mostrar_tela(get_tela_principal), bootstyle=LINK).pack()
