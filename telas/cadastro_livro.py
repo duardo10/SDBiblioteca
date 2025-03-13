@@ -8,24 +8,25 @@ from telas.gerenciador_telas import get_tela_principal
 def tela_cadastro_livro(container, root):
     frame = ttk.Frame(container)
     frame.pack(expand=True, fill="both") 
+    frame.place(relx=0.5, rely=0.5, anchor="center")
 
     ttk.Label(frame, text="Cadastro de Livros", font=("Arial", 18, "bold")).pack(pady=10)
 
     ttk.Label(frame, text="Título:").pack()
-    titulo_entry = ttk.Entry(frame, bootstyle="primary")
-    titulo_entry.pack(pady=5, padx=20, fill=X)
+    titulo_entry = ttk.Entry(frame, bootstyle="primary", width=30)
+    titulo_entry.pack(pady=5, padx=20)
 
     ttk.Label(frame, text="Autor:").pack()
-    autor_entry = ttk.Entry(frame, bootstyle="primary")
-    autor_entry.pack(pady=5, padx=20, fill=X)
+    autor_entry = ttk.Entry(frame, bootstyle="primary", width=30)
+    autor_entry.pack(pady=5, padx=20)
 
     ttk.Label(frame, text="Quantidade de Páginas:").pack()
-    paginas_entry = ttk.Entry(frame, bootstyle="primary")
-    paginas_entry.pack(pady=5, padx=20, fill=X)
+    paginas_entry = ttk.Entry(frame, bootstyle="primary", width=30)
+    paginas_entry.pack(pady=5, padx=20)
 
     ttk.Label(frame, text="Ano de Publicação:").pack()
-    ano_entry = ttk.Entry(frame, bootstyle="primary")
-    ano_entry.pack(pady=5, padx=20, fill=X)
+    ano_entry = ttk.Entry(frame, bootstyle="primary", width=30)
+    ano_entry.pack(pady=5, padx=20)
 
     def salvar_livro():
         titulo = titulo_entry.get()

@@ -10,7 +10,8 @@ def tela_editar_livro(container, root):
 
     frame = ttk.Frame(container)
     frame.pack(expand=True, fill="both") 
-
+    frame.place(relx=0.5, rely=0.5, anchor="center")
+    
     ttk.Label(frame, text="Editar Livro", font=("Arial", 18, "bold")).pack(pady=10)
 
     # Listbox para exibir os livros
@@ -47,12 +48,12 @@ def tela_editar_livro(container, root):
         ttk.Label(frame, text="Editar Livro", font=("Arial", 18, "bold")).pack(pady=10)
 
         ttk.Label(frame, text="Título:").pack()
-        novo_titulo = ttk.Entry(frame, bootstyle="primary")
+        novo_titulo = ttk.Entry(frame, bootstyle="primary", width=30)
         novo_titulo.insert(0, livro_data["titulo"])
         novo_titulo.pack(pady=5, padx=20, fill="x")
 
         ttk.Label(frame, text="Autor:").pack()
-        novo_autor = ttk.Entry(frame, bootstyle="primary")
+        novo_autor = ttk.Entry(frame, bootstyle="primary", width=30)
         novo_autor.insert(0, livro_data["autor"])
         novo_autor.pack(pady=5, padx=20, fill="x")
 
