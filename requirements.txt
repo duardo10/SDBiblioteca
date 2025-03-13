@@ -1,2 +1,4 @@
 firebase-admin
-tk 
+tk
+ttkbootstrap 
+pyrebase
