@@ -49,30 +49,51 @@ def tela_editar_livro(container, root):
 
         ttk.Label(frame, text="Título:").pack()
         novo_titulo = ttk.Entry(frame, bootstyle="primary", width=30)
-        novo_titulo.insert(0, livro_data["titulo"])
+        novo_titulo.insert(0, livro_data.get("titulo", ""))
         novo_titulo.pack(pady=5, padx=20, fill="x")
 
         ttk.Label(frame, text="Autor:").pack()
         novo_autor = ttk.Entry(frame, bootstyle="primary", width=30)
-        novo_autor.insert(0, livro_data["autor"])
+        novo_autor.insert(0, livro_data.get("autor", ""))
         novo_autor.pack(pady=5, padx=20, fill="x")
 
+        ttk.Label(frame, text="Ano:").pack()
+        novo_ano = ttk.Entry(frame, bootstyle="primary", width=30)
+        if "ano" in livro_data:
+            novo_ano.insert(0, str(livro_data["ano"]))  # Insere o ano salvo no banco
+        novo_ano.pack(pady=5, padx=20, fill="x")
+
+        ttk.Label(frame, text="Quantidade de Páginas:").pack()
+        novo_paginas = ttk.Entry(frame, bootstyle="primary", width=30)
+        if "paginas" in livro_data:
+            novo_paginas.insert(0, str(livro_data["paginas"]))  # Insere o número de páginas salvo
+        novo_paginas.pack(pady=5, padx=20, fill="x")
+
         def salvar_edicao():
-            db.child("livros").child(livro_id).update({
-                "titulo": novo_titulo.get(),
-                "autor": novo_autor.get()
-            })
-            messagebox.showinfo("Sucesso", "Livro atualizado com sucesso!")
-            root.mostrar_tela(get_tela_editar_livro)
+            try:
+                db.child("livros").child(livro_id).update({
+                    "titulo": novo_titulo.get(),
+                    "autor": novo_autor.get(),
+                    "ano": int(novo_ano.get()) if novo_ano.get().isdigit() else 0,
+                    "paginas": int(novo_paginas.get()) if novo_paginas.get().isdigit() else 0
+                })
+                messagebox.showinfo("Sucesso", "Livro atualizado com sucesso!")
+                root.mostrar_tela(get_tela_editar_livro)
+            except Exception as e:
+                messagebox.showerror("Erro", f"Erro ao atualizar livro: {e}")
 
         def deletar_livro():
-            db.child("livros").child(livro_id).remove()
-            messagebox.showinfo("Sucesso", "Livro deletado com sucesso!")
-            root.mostrar_tela(get_tela_editar_livro)
+            try:
+                db.child("livros").child(livro_id).remove()
+                messagebox.showinfo("Sucesso", "Livro deletado com sucesso!")
+                root.mostrar_tela(get_tela_editar_livro)
+            except Exception as e:
+                messagebox.showerror("Erro", f"Erro ao deletar livro: {e}")
 
         ttk.Button(frame, text="Salvar Edição", command=salvar_edicao, bootstyle="SUCCESS").pack(pady=10)
         ttk.Button(frame, text="Deletar Livro", command=deletar_livro, bootstyle="DANGER").pack(pady=10)
         ttk.Button(frame, text="Voltar", command=lambda: root.mostrar_tela(get_tela_editar_livro), bootstyle="LINK").pack(pady=10)
+
 
     def selecionar_livro():
         try:

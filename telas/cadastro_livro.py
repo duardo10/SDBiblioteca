@@ -31,6 +31,8 @@ def tela_cadastro_livro(container, root):
     def salvar_livro():
         titulo = titulo_entry.get()
         autor = autor_entry.get()
+        ano = ano_entry.get()
+        paginas = paginas_entry.get()
         email_usuario = auth.current_user['email']
 
         if not titulo or not autor:
@@ -40,6 +42,8 @@ def tela_cadastro_livro(container, root):
         livro = {
             "titulo": titulo,
             "autor": autor,
+            "ano": ano,
+            "paginas": paginas,
             "email_usuario": email_usuario
         }
 
