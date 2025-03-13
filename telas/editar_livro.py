@@ -2,7 +2,7 @@ import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from tkinter import Listbox, Scrollbar, END, messagebox
 from firebase_service import db, auth
-from telas.gerenciador_telas import get_tela_principal
+from telas.gerenciador_telas import get_tela_principal, get_tela_editar_livro
 
 
 def tela_editar_livro(container, root):
