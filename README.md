@@ -4,11 +4,15 @@ Este projeto é um sistema de cadastro de livros utilizando Python com interface
 
 ## Estrutura do Projeto
 
-- `src/gui/`: Contém a interface gráfica do usuário.
-- `src/database/`: Contém a configuração e serviços para interação com o Firebase.
-- `src/models/`: Contém os modelos de dados.
-- `src/controllers/`: Contém a lógica de controle para operações CRUD.
-- `src/app.py`: Arquivo principal para iniciar a aplicação.
+- `telas/`: Contém os arquivos relacionados às telas da interface gráfica do usuário.
+- `venv/`: Ambiente virtual para gerenciamento de dependências do projeto.
+- `config.py`: Arquivo de configuração do firebase.
+- `firebase_service.py`: Contém os serviços para interação com o Firebase.
+- `main.py`: Arquivo principal para iniciar a aplicação.
+- `README.md`: Documentação do projeto.
+- `requirements.txt`: Lista de dependências do projeto.
+- `.gitignore`: Arquivo para ignorar arquivos desnecessários no versionamento.
+- `LICENSE`: Arquivo de licença do projeto.
 
 ## Requisitos
 
