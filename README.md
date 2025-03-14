@@ -168,12 +168,12 @@ A tela de pesquisa permite que o usuário **busque** por livros cadastrados na b
 
 Para iniciar a aplicação, execute:
 ```bash
-python src/app.py
+python main.py
 ```
 
 ## Contribuidores
 
-Luis Eduardo Silva Brito
+Luis Eduardo 
 Francisco Aparício
 Victor Macêdo
 
