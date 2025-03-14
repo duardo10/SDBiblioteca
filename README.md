@@ -173,8 +173,8 @@ python main.py
 
 ## Contribuidores
 
-Luis Eduardo 
-Francisco Aparício
+Luis Eduardo,
+Francisco Aparício,
 Victor Macêdo
 
 
